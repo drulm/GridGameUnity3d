@@ -24,7 +24,7 @@ public class Gear : MonoBehaviour
 	{
 		string name = GetName();			// Get name of this object
 		int x = GetTileX(name); 			// The tile loc X
-		bool  turnGear;						// Turn the gear, yes-no
+		bool  turnGear;					// Turn the gear, yes-no
 
 		// turnGear = true if this gear should be turning
 		turnGear = Application.loadedLevelName == "sceneStart" || Application.loadedLevelName == "sceneLose";
