@@ -12,7 +12,7 @@ using UnityEngine;
 using System.Collections;
 
 
-public class Gear : MonoBehaviour 
+public class Gear : MonoBehaviour
 {
 	//======================================================================
 	// Methods
