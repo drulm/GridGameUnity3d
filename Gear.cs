@@ -1,11 +1,12 @@
 
 //======================================================================
-// GRID GAME:	Gear.cs
+// GRID GAME:	Gear.cs    /   Darrell Ulm
 // 			Attached to gear object.
 //				Used for (gear objects in):
 //					* Start.cs
 //					* Lose.cs
 //					* SceneManager.cs
+// Darrell R. Ulm
 //======================================================================
 
 using UnityEngine;
