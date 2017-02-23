@@ -1,11 +1,9 @@
-
+﻿
 //======================================================================
-// GRID GAME:	Cube.cs / Darrell Ulm
+// GRID GAME:	Cube.cs
 //			Used for:
 // 				Attached to 8x8 tile grid, each cube
-// Darrell R. Ulm
 //======================================================================
-
 
 using UnityEngine;
 using System.Collections;

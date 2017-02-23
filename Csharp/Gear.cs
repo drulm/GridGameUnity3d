@@ -1,19 +1,18 @@
-
+﻿
 //======================================================================
-// GRID GAME:	Gear.cs    /   Darrell Ulm
+// GRID GAME:	Gear.cs
 // 			Attached to gear object.
 //				Used for (gear objects in):
 //					* Start.cs
 //					* Lose.cs
 //					* SceneManager.cs
-// Darrell R. Ulm
 //======================================================================
 
 using UnityEngine;
 using System.Collections;
 
 
-public class Gear : MonoBehaviour
+public class Gear : MonoBehaviour 
 {
 	//======================================================================
 	// Methods
@@ -25,7 +24,7 @@ public class Gear : MonoBehaviour
 	{
 		string name = GetName();			// Get name of this object
 		int x = GetTileX(name); 			// The tile loc X
-		bool  turnGear;					// Turn the gear, yes-no
+		bool  turnGear;						// Turn the gear, yes-no
 
 		// turnGear = true if this gear should be turning
 		turnGear = Application.loadedLevelName == "sceneStart" || Application.loadedLevelName == "sceneLose";

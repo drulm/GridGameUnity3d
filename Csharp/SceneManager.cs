@@ -1,4 +1,4 @@
-
+﻿
 //======================================================================
 // GRID GAME:	SceneManager.cs
 // 			Attached to the camera
@@ -299,7 +299,7 @@ public class SceneManager : MonoBehaviour
 	
 	private string[] LevelName =	// Names of the levels
 	{
-		 "WELCOME!",				// Tutorial Level 1
+		 "BEGIN",				// Tutorial Level 1
 		 "DOWN TILES",				// Tutorial Level 2
 		 "LEFT TILES",				// Tutorial Level 3
 		 "RIGHT TILES",				// Tutorial Level 4
@@ -543,7 +543,7 @@ public class SceneManager : MonoBehaviour
 			_oldWidth = Screen.width;
 			_oldHeight = Screen.height;
 			mn = Screen.width < Screen.height ? Screen.width : Screen.height;
-			fontSize = (int)(mn / Global.ScreenRatio);
+			fontSize = (int)(mn / Global.ScreenRatio / 1.5);
 		}
 
 		// Turn the panic button on
@@ -742,7 +742,7 @@ public class SceneManager : MonoBehaviour
 		if (tutorialOn) 
 		{
 			GUI.BeginGroup( new Rect(r, r, screenWidth, screenHeight-r));
-			GUI.Box( new Rect(0, 0, screenWidth-r*2, screenHeight-r*2), "\n\n" + LevelText[level]);
+			GUI.Box( new Rect(0, 0, screenWidth-r*2, screenHeight-r*2), "\n\n\n" + LevelText[level]);
 			if (GUI.Button( new Rect(10, screenHeight-r*3-20, screenWidth-r*2-20, r), "BEGIN!")) 
 			{
 				myAudio[12].Play();
@@ -783,9 +783,9 @@ public class SceneManager : MonoBehaviour
 		}
 		
 		// This is the small in game menu button
-		GUI.BeginGroup( new Rect(screenWidth - r*3, screenHeight - r, r*3, r));
+		GUI.BeginGroup( new Rect(screenWidth - r*2, screenHeight - r, r*2, r));
 		GUI.Box( new Rect(0, 0, r*3, r), "");
-		if (GUI.Button( new Rect(0, 0, r*3, r), "Menu")) 
+		if (GUI.Button( new Rect(0, 0, r*3, r), "opt")) 
 		{
 			menuOn = true;
 			myAudio[12].Play();
@@ -2995,4 +2995,3 @@ public class SceneManager : MonoBehaviour
 	}
 	
 }
-
