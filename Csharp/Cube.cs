@@ -23,10 +23,10 @@ public class Cube : MonoBehaviour
 
 	// Private Constants
 	//----------------------------------------------------------------------
-	private const float Speed 			= 50.0f;		// Tile Move Speed
-	private const float RotateSpeed 	= 1000.0f;		// The rotate speed
-	private const float LastTileSpeed	= 200.0f;		// End tile move speed
-	private const float ExtendZPos		= 1.1f;			// The match new Z position
+	private const float Speed 			= 20.0f;		// Tile Move Speed
+	private const float RotateSpeed 	= 300.0f;		// The rotate speed
+	private const float LastTileSpeed	= 50.0f;		// End tile move speed
+	private const float ExtendZPos		= -1.1f;		// The match new Z position
 
 
 	// Private Variables
@@ -69,9 +69,11 @@ public class Cube : MonoBehaviour
 		float lastTileStep = LastTileSpeed * Time.deltaTime;	// The end tile move speed	
 		Vector3 curPos;											// The current tile position
 
-	
-		// See if any object is moving, so we don't allow clicks during movement
-		staticObject = true;									// Assume we did not move
+        //transform.position = Vector3.MoveTowards(transform.position, new Vector3(x, y, 1), step);
+        //return;
+
+        // See if any object is moving, so we don't allow clicks during movement
+        staticObject = true;									// Assume we did not move
 		curPos = transform.position;							// Get the position
 
 		// State machine for tile automata
@@ -146,7 +148,7 @@ public class Cube : MonoBehaviour
 				// Also move matched tiles out to Z position
 				if (transform.position.z < ExtendZPos)
 				{
-					transform.position = Vector3.MoveTowards(transform.position, new Vector3(x, y, ExtendZPos - Random.Range(2.0f, 6.0f)), lastTileStep);
+					transform.position = Vector3.MoveTowards(transform.position, new Vector3(x, y, ExtendZPos), lastTileStep);
 				}
 
 				// Play a sound at end of rotation

@@ -48,9 +48,10 @@ public class Lose : MonoBehaviour
 
 		// Go back if they hit the Android quit button
 		if (Input.GetKeyDown(KeyCode.Escape))
-		{ 
-			Application.LoadLevel("sceneStart");
-		}
+		{
+			// Application.LoadLevel("sceneStart");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("sceneStart");
+        }
 
 	}
 
@@ -96,8 +97,9 @@ public class Lose : MonoBehaviour
 		// Return to main menu button
 		if (GUI.Button(new Rect(10, r*5.3f, screenWidth/2-20, r), "To Main Menu")) 
 		{
-			Application.LoadLevel("sceneStart");
-		}
+			//Application.LoadLevel("sceneStart");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("sceneStart");
+        }
 
 		GUI.EndGroup();
 	}

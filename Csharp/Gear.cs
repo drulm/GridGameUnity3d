@@ -9,7 +9,8 @@
 //======================================================================
 
 using UnityEngine;
-using System.Collections;
+//using System.Collections;
+//using UnityEngine.SceneManagement;
 
 
 public class Gear : MonoBehaviour 
@@ -24,14 +25,17 @@ public class Gear : MonoBehaviour
 	{
 		string name = GetName();			// Get name of this object
 		int x = GetTileX(name); 			// The tile loc X
-		bool  turnGear;						// Turn the gear, yes-no
+		bool  turnGear;                     // Turn the gear, yes-no
 
-		// turnGear = true if this gear should be turning
-		turnGear = Application.loadedLevelName == "sceneStart" || Application.loadedLevelName == "sceneLose";
-		turnGear = (Application.loadedLevelName == "scene1") ? GetCoinsMoving() : turnGear;
+        // turnGear = true if this gear should be turning
+        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        //turnGear = Application.loadedLevelName == "sceneStart" || Application.loadedLevelName == "sceneLose";
+        //turnGear = (Application.loadedLevelName == "scene1") ? GetCoinsMoving() : turnGear;
+        turnGear = sceneName == "sceneStart" || sceneName == "sceneLose";
+        turnGear = (sceneName == "scene1") ? GetCoinsMoving() : turnGear;
 
-		// Rotate the gear forwards or backwards
-		if (turnGear)
+        // Rotate the gear forwards or backwards
+        if (turnGear)
 		{
 			// Turn even named gears forwards
 			if (x % 2 == 0) 

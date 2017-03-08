@@ -5,7 +5,8 @@
 //======================================================================
 
 using UnityEngine;
-using System.Collections;
+//using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneStart : MonoBehaviour 
 {
@@ -181,8 +182,9 @@ public class SceneStart : MonoBehaviour
 				SetMode(Global.ModeStandard);
 				loadingMsg = (GameObject)Instantiate(loadingText, new Vector3(-3, 5.5f, -5), Quaternion.identity);
 				loadingMsg.GetComponent<TextMesh>().text = "LOADING...";
-				Application.LoadLevel("scene1");
-			}
+				//Application.LoadLevel("scene1");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("scene1");
+            }
 			// Random levels option
 			if (GUI.Button( new Rect(r/2, r*2.4f, Screen.width-r*5, r), "BAGS OF MYSTERY - random")) 
 			{
@@ -191,8 +193,9 @@ public class SceneStart : MonoBehaviour
 				SetMode(Global.ModeRandom);
 				loadingMsg = (GameObject) Instantiate(loadingText, new Vector3(-3, 5.5f, -5), Quaternion.identity);
 				loadingMsg.GetComponent<TextMesh>().text = "LOADING...";
-				Application.LoadLevel("scene1");
-			}
+				//Application.LoadLevel("scene1");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("scene1");
+            }
 			// Timed levels option
 			if (GUI.Button( new Rect(r/2, r*3.4f, Screen.width-r*5, r), "MESMERISM - timed")) 
 			{
@@ -201,8 +204,9 @@ public class SceneStart : MonoBehaviour
 				SetMode(Global.ModeTimed);
 				loadingMsg = (GameObject) Instantiate(loadingText, new Vector3(-3, 5.5f, -5), Quaternion.identity);
 				loadingMsg.GetComponent<TextMesh>().text = "LOADING...";
-				Application.LoadLevel("scene1");
-			}
+				//Application.LoadLevel("scene1");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("scene1");
+            }
 			// Tutorial, removed for now.
 			/*
 			if (GUI.Button( new Rect(10, r*4.4f, Screen.width-r*4.2f, r), "PRIMER - tutorial")) {

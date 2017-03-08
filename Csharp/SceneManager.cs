@@ -548,15 +548,17 @@ public class SceneManager : MonoBehaviour
 
 		// Turn the panic button on
 		if (panicMeter >= MaxPanic && coins <= 5) 
-		{		
-			panicButton.gameObject.active = true;
-			panicButton.gameObject.GetComponent<MeshRenderer>().enabled = true;
+		{
+			// panicButton.gameObject.active = true;
+            panicButton.SetActive(false);
+            panicButton.gameObject.GetComponent<MeshRenderer>().enabled = true;
 		}
 		else
 		{
 			// Or turn it off
-			panicButton.gameObject.active = false;
-			panicButton.gameObject.GetComponent<MeshRenderer>().enabled = false;
+			// panicButton.gameObject.active = false;
+            panicButton.SetActive(false);
+            panicButton.gameObject.GetComponent<MeshRenderer>().enabled = false;
 		}
 
 		timer -= Time.deltaTime;				// Decrease the timer.
@@ -721,8 +723,9 @@ public class SceneManager : MonoBehaviour
 					levelEndOn = false;
 					coins += (int)(numStars) * 2;
 					levelScore = 0;
-					panicButton.gameObject.active = false;
-					panicButton.gameObject.GetComponent<MeshRenderer>().enabled = false;
+					//panicButton.gameObject.active = false;
+                    panicButton.SetActive(false);
+                    panicButton.gameObject.GetComponent<MeshRenderer>().enabled = false;
 					myAudio[12].Play();
 				}
 				GUI.EndGroup();
@@ -803,8 +806,9 @@ public class SceneManager : MonoBehaviour
 		AudioListener.pause = false;
 		globalObject.GetComponent<Global>().score = score;
 		SetGlobals();
-		Application.LoadLevel("sceneStart");
-	}
+		//Application.LoadLevel("sceneStart");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("sceneStart");
+    }
 
 
 	//----------------------------------------------------------------------
@@ -876,8 +880,9 @@ public class SceneManager : MonoBehaviour
 	IEnumerator LoadLoseLevel()
 	{
 		yield return new WaitForSeconds(3.0f);
-		Application.LoadLevel("sceneLose");
-	}
+		//Application.LoadLevel("sceneLose");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("sceneLose");
+    }
 
 
 	//----------------------------------------------------------------------
@@ -1729,8 +1734,9 @@ public class SceneManager : MonoBehaviour
 		myAudio[10].Play();
 		panicMeter = 0;			// Reset the panic meter after used.
 		scrambleMeter = MaxScramble + Random.Range(0,5);
-		panicButton.gameObject.active = false;	// Turn it off
-		panicButton.gameObject.GetComponent<MeshRenderer>().enabled = false;
+		// panicButton.gameObject.active = false;	// Turn it off
+        panicButton.SetActive(false);
+        panicButton.gameObject.GetComponent<MeshRenderer>().enabled = false;
 	}
 
 

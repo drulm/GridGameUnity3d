@@ -64,7 +64,8 @@ public class Global : MonoBehaviour
 	void Start()
 	{
 		// Just load the first real scene
-		Application.LoadLevel("sceneStart");
-	}
+		//Application.LoadLevel("sceneStart");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("sceneStart");
+    }
 
 }
