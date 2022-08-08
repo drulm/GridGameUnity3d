@@ -11,48 +11,49 @@ using System.Collections;
 
 public class Coins : MonoBehaviour
 {
-	//======================================================================
-	// Variables
-	//======================================================================
+    //======================================================================
+    // Variables
+    //======================================================================
 
-	// Public Unity Variables
-	//----------------------------------------------------------------------
-	public bool staticObject;		// Is this coin in motion or not
-
-
-	// Private Variables
-	//----------------------------------------------------------------------
-	private Vector3 lastPos;		// Save last position, to see if in motion
+    // Public Unity Variables
+    //----------------------------------------------------------------------
+    public bool staticObject;       // Is this coin in motion or not
 
 
-	//======================================================================
-	// Methods
-	//======================================================================
-
-	//----------------------------------------------------------------------
-	// Unity: Update method
-	void Update()
-	{
-		SetCoinMotion();
-	}
+    // Private Variables
+    //----------------------------------------------------------------------
+    private Vector3 lastPos;        // Save last position, to see if in motion
 
 
-	//----------------------------------------------------------------------
-	// Set flag staticObject to true if coin not moving
-	void SetCoinMotion()
-	{
-		Vector3 curPos;						// To save the current position
+    //======================================================================
+    // Methods
+    //======================================================================
+
+    //----------------------------------------------------------------------
+    // Unity: Update method
+    void Update()
+    {
+        SetCoinMotion();
+    }
 
 
-		staticObject = true;				// Assume we did not move
-		curPos = transform.position;		// Save the current position
-		
-		// Set stationary position if we did not move
-		if (curPos != lastPos) {
-			staticObject = false;			// We moved
-		}
+    //----------------------------------------------------------------------
+    // Set flag staticObject to true if coin not moving
+    void SetCoinMotion()
+    {
+        Vector3 curPos;                     // To save the current position
 
-		lastPos = curPos;					// Save old pos
-	}
+
+        staticObject = true;                // Assume we did not move
+        curPos = transform.position;        // Save the current position
+
+        // Set stationary position if we did not move
+        if (curPos != lastPos)
+        {
+            staticObject = false;           // We moved
+        }
+
+        lastPos = curPos;                   // Save old pos
+    }
 
 }

@@ -9,35 +9,35 @@
 using UnityEngine;
 using System.Collections;
 
-public class Lightning : MonoBehaviour 
+public class Lightning : MonoBehaviour
 {
-	//======================================================================
-	// Variables
-	//======================================================================
+    //======================================================================
+    // Variables
+    //======================================================================
 
-	// Private Variables
-	//----------------------------------------------------------------------
-	private const float Duration = 2.0f;
-
-
-	//======================================================================
-	// Methods
-	//======================================================================
-
-	//----------------------------------------------------------------------
-	// Unity Start method
-	void Start()
-	{
-		StartCoroutine(AutoDestruct());
-	}
+    // Private Variables
+    //----------------------------------------------------------------------
+    private const float Duration = 2.0f;
 
 
-	//----------------------------------------------------------------------
-	// AutoDestruct method
-	IEnumerator AutoDestruct()
-	{
-		yield return new WaitForSeconds(Duration);
-		Destroy(gameObject);
-	}
-	
+    //======================================================================
+    // Methods
+    //======================================================================
+
+    //----------------------------------------------------------------------
+    // Unity Start method
+    void Start()
+    {
+        StartCoroutine(AutoDestruct());
+    }
+
+
+    //----------------------------------------------------------------------
+    // AutoDestruct method
+    IEnumerator AutoDestruct()
+    {
+        yield return new WaitForSeconds(Duration);
+        Destroy(gameObject);
+    }
+
 }
